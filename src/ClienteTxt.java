@@ -1,9 +1,14 @@
 import java.io.IOException; // Para trabalhar com as exececoes
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 import java.io.File;  // Import the File class(para arquivos de textos)
 import java.io.FileWriter;   // Import the FileWriter class, para escrita
 import java.util.Scanner; // Import the Scanner class, para ler(scanear) os arquivos txt's
 
-public class ClienteTxt {
+public class ClienteTxt extends Cliente {
  
 /*	 metodo responsavel para criar ou carregar o arquivo ("cliente.txt") 
 	public static void LoadTxt() {
@@ -20,16 +25,18 @@ public class ClienteTxt {
 	      }
 	}*/
 	
+	
+	Cliente testeCliente = new Cliente();
+	testeCliente.setNome("Teste serealize");
+	
+	
 	/* metodo responsavel para criar ou carregar o arquivo ("cliente.txt") */
 	public static void LoadTxt() {
 		try {
-			// crie um arquivo:
-			File file = new File("nomedoaquivo.dat");
-
-			// crie o leitor para o aquivo:
-			ObjectOutStream output = new ObjectOutputSteam(new FileOutPutStream(file));
-
-			// grave o objeto com: output.writeObject(list);
+	        // Serialize to a file   
+	        ObjectOutput out = new ObjectOutputStream(new FileOutputStream("filename.ser"));   
+	        //out.writeObject(object);   
+	        //out.close();  
 
 		} catch (IOException e) {
 			System.out.println("\n\nErro ao criar arquivo.");
