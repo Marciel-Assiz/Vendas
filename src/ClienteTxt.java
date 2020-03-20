@@ -8,7 +8,7 @@ import java.io.File;  // Import the File class(para arquivos de textos)
 import java.io.FileWriter;   // Import the FileWriter class, para escrita
 import java.util.Scanner; // Import the Scanner class, para ler(scanear) os arquivos txt's
 
-public class ClienteTxt extends Cliente {
+public class ClienteTxt {
  
 /*	 metodo responsavel para criar ou carregar o arquivo ("cliente.txt") 
 	public static void LoadTxt() {
@@ -24,25 +24,48 @@ public class ClienteTxt extends Cliente {
 	        e.printStackTrace(); // Printa o erro da exception
 	      }
 	}*/
-	
-	
-	Cliente testeCliente = new Cliente();
-	testeCliente.setNome("Teste serealize");
-	
-	
+		
 	/* metodo responsavel para criar ou carregar o arquivo ("cliente.txt") */
 	public static void LoadTxt() {
+		Cliente testeCliente = new Cliente();
+		testeCliente.setNome("Marciel");
+		testeCliente.setEmail("marciel@marciel.com");
+		
 		try {
 	        // Serialize to a file   
-	        ObjectOutput out = new ObjectOutputStream(new FileOutputStream("filename.ser"));   
-	        //out.writeObject(object);   
-	        //out.close();  
+			File file = new File("filename.ser");
+	        ObjectOutput out = new ObjectOutputStream(new FileOutputStream(file));   
+	        out.writeObject(testeCliente);   
+	        out.close();  
 
 		} catch (IOException e) {
-			System.out.println("\n\nErro ao criar arquivo.");
-			e.printStackTrace(); // Printa o erro da exception
+			//System.out.println("\n\nErro ao criar arquivo.");
+			//e.printStackTrace(); // Printa o erro da exception
 		}
+		Deserializar();
 	}
+	
+	public static void Deserializar() {
+		Cliente testCliente = null;
+		
+		try {   
+	        // Deserialize from a file   
+	        File file = new File("filename.ser");   
+	        ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));   
+	        // Deserialize the object   
+	        testCliente = (Cliente) in.readObject();   
+	        in.close();   
+	        System.out.println("Seu objeto de volta: "+"");
+	        
+	    } catch (ClassNotFoundException e) {   
+	    
+	    } catch (IOException e) {   
+	    
+	    }  
+	    
+		System.out.println("Seu objeto de volta!");
+	}
+	    
 	
 	
 	/* metodo responsavel para escrever o arquivo ("cliente.txt") */
