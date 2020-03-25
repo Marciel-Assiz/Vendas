@@ -1,5 +1,5 @@
 
-public class ListarCliente 
+public class ListarClientes 
 {
 	public static void renderizar()
 	{
