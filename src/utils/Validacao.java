@@ -1,8 +1,8 @@
 package utils;
 
 public class Validacao {
-	
-	public static Boolean validarCpf(String cpf) {
+	// static > sempre tem que ser dessa forma para ser acessado por outros metodos
+	public static Boolean validarCpf(String cpf) {	// Boolean > retorna 
 		
 		if(cpf.length() != 11) {
 			return false;
