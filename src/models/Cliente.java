@@ -2,18 +2,15 @@ package models;
 
 public class Cliente {
 	
-	//As classes de modelo vão definir as informações do 
-	//que está sendo modelado
+	//As classes de modelo vï¿½o definir as informaï¿½ï¿½es do que estï¿½ sendo modelado
 	
-	//Atributos, propriedades ou características
+	//Atributos, propriedades ou caracterï¿½sticas
 	
 	//Os atributos devem ser SEMPRE privados
 	
-	//Criar um construtor que pegue a data e hora atual do
-	//sistema e defina isso no objeto criado
+	//Criar um construtor que pegue a data e hora atual do sistema e defina isso no objeto criado
 	
-	//Desenvolver as funcionalidades 1 e 2 do projeto
-	//de vendas
+	//Desenvolver as funcionalidades 1 e 2 do projeto de vendas
 	
 	public Cliente(String nome, String cpf) {
 		this.nome = nome;

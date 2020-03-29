@@ -25,10 +25,10 @@ public class CadastrarCliente {
 			if (ClienteDAO.cadastrarCliente(c)) {
 				System.out.println("\nCLIENTE CADASTRADO!!!\n");
 			} else {
-				System.out.println("\nESSE CLIENTE J¡ EXISTE!!!\n");
+				System.out.println("\nESSE CLIENTE J√Å EXISTE!!!\n");
 			}
 		}else {
-			System.out.println("\nCPF inv·lido!");
+			System.out.println("\nCPF inv√°lido!");
 		}
 
 	}

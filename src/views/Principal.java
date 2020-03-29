@@ -1,7 +1,7 @@
 package views;
-//MVC - SeparaÁ„o do projeto em camadas
+//MVC - Separacao do projeto em camadas
 //Model - Camada das classes de modelo
-//View - Camada de visualizaÁ„o - Classes que interagem com o usu·rio
+//View - Camada de visualizacao - Classes que interagem com o usuario
 //Controller - 
 
 import utils.Console;
@@ -13,10 +13,12 @@ public class Principal {
 		int opcao;
 		do {
 			System.out.println("\n -- PROJETO DE VENDAS --\n ");
-			System.out.println("1 - Cadastrar cliente");
+			System.out.println("1 - Cadastrar clientes");
 			System.out.println("2 - Listar clientes");
+			System.out.println("3 - Cadastrar Vendedor");
+			System.out.println("4 - Listar Vendedor");
 			System.out.println("0 - Sair");
-			opcao = Console.readInt("\nDigite a opÁ„o escolhida: ");
+			opcao = Console.readInt("\nDigite a op√ß√£o escolhida: ");
 			
 			switch (opcao) {
 			case 1:		
@@ -25,13 +27,19 @@ public class Principal {
 			case 2:
 				ListarClientes.renderizar();
 				break;
+			case 3:		
+				CadastrarVendedor.renderizar();
+				break;
+			case 4:
+				//ListarVendedores.renderizar();
+				break;	
 			case 0:
 				System.out.println("\nSaindo...");
 				break;
 			default:
-				System.out.println("\n -- OP«√O INV¡LIDA!!! --\n ");
+				System.out.println("\n -- OP√á√ÉO INV√ÅLIDA!!! --\n ");
 				break;
-			}
+			}  
 			
 		} while (opcao != 0);
 	}
