@@ -16,7 +16,10 @@ public class Principal {
 			System.out.println("1 - Cadastrar clientes");
 			System.out.println("2 - Listar clientes");
 			System.out.println("3 - Cadastrar Vendedor");
-			System.out.println("4 - Listar Vendedor");
+			System.out.println("4 - Listar funcionários");
+			System.out.println("5 - Cadastrar produto");
+			System.out.println("6 - Listar produtos");
+			System.out.println("7 - Cadastrar venda");
 			System.out.println("0 - Sair");
 			opcao = Console.readInt("\nDigite a opção escolhida: ");
 			
@@ -28,11 +31,20 @@ public class Principal {
 				ListarClientes.renderizar();
 				break;
 			case 3:		
-				CadastrarVendedor.renderizar();
+				CadastrarFuncionario.renderizar();
 				break;
 			case 4:
-				//ListarVendedores.renderizar();
-				break;	
+				ListarFuncionarios.renderizar();
+				break;
+			case 5:		
+				CadastrarProduto.renderizar();
+				break;
+			case 6:
+				ListarProdutos.renderizar();
+				break;
+			case 7:
+				CadastrarVenda.renderizar();
+				break;
 			case 0:
 				System.out.println("\nSaindo...");
 				break;

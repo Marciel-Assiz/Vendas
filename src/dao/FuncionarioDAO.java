@@ -1,23 +1,28 @@
 package dao;
 import java.util.ArrayList;
-import models.Vendedor;
 
-//DAO - Data Access Object
-public class VendedorDAO {
+import models.Cliente;
+import models.Funcionario;
+
+//MVC
+public class FuncionarioDAO {
+
+	//DAO - Data Access Object
+	private static ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 	
-	private static ArrayList<Vendedor> vendedores = new ArrayList<Vendedor>();
-	
-	public static Boolean cadastrarVendedor(Vendedor v) {
-		for (Vendedor vendedorCadastrado : vendedores) {
-			if(vendedorCadastrado.getCpf().equals(v.getCpf() )) {
+	public static Boolean cadastrarFuncionario(Funcionario f) {		
+		for (Funcionario funcionarioCadastrado : funcionarios) {
+			if(funcionarioCadastrado.getCpf().equals(f.getCpf())) {
 				return false;
 			}
-		}
-		vendedores.add(v);
+		}		
+		funcionarios.add(f);	
 		return true;
 	}
 	
-	public static ArrayList<Vendedor> retornarVendedores() {
-		return vendedores; 
+	public static ArrayList<Funcionario> retonarFuncionarios(){
+		return funcionarios;
 	}
+	
+	
 }
