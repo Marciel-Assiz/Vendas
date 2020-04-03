@@ -1,6 +1,6 @@
 package models;
 
-public class Vendedor {
+public class Funcionario {
 	private String nome;
 	private String cpf;
 	
@@ -15,6 +15,11 @@ public class Vendedor {
 	}
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+	
+	@Override
+	public String toString() {
+		return "Nome: " + this.nome + " | CPF: " + this.cpf;
 	}
 
 }
